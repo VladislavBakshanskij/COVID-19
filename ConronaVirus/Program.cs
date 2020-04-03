@@ -40,7 +40,7 @@ namespace CoronaVirus {
 
         private static void Save(Coronavirus coronavirus) {
             string json = string.Empty;
-            using (FileStream fs = new FileStream(Path, FileMode.OpenOrCreate)) 
+            using (FileStream fs = new FileStream(Path, FileMode.OpenOrCreate))
                 json = JsonSerializer.Serialize(coronavirus, typeof(Coronavirus));
             File.WriteAllText(Path, json);
         }
@@ -63,10 +63,7 @@ namespace CoronaVirus {
                 Console.WriteLine($"--Число зараженных: {coronavirus.Cases}");
                 Console.WriteLine($"--Число умерших: {coronavirus.Death}");
                 Console.WriteLine($"--Число выживших: {coronavirus.Recovered}");
-
-                Save(coronavirus);
             } else {
-
                 Console.WriteLine($"Дата: {coronavirus.Date}");
                 Console.WriteLine($"--Число зараженных: {coronavirus.Cases}");
                 Console.WriteLine($"--Число умерших: {coronavirus.Death}");
@@ -86,6 +83,7 @@ namespace CoronaVirus {
                 Console.WriteLine($"--Число умерших изменилось на: {coronavirus.Death - oldCoronavirusState.Death}");
                 Console.WriteLine($"--Число выживших изменилось на: {coronavirus.Recovered - oldCoronavirusState.Recovered}");
             }
+            Save(coronavirus);
 
             Console.Read();
         }
