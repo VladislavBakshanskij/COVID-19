@@ -3,6 +3,7 @@ using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
 using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -59,32 +60,23 @@ namespace CoronaVirus {
             Coronavirus oldCoronavirusState = Read();
 
             if (oldCoronavirusState == null) {
-                Console.WriteLine($"Дата: {coronavirus.Date}");
-                Console.WriteLine($"--Число зараженных: {coronavirus.Cases}");
-                Console.WriteLine($"--Число умерших: {coronavirus.Death}");
-                Console.WriteLine($"--Число выживших: {coronavirus.Recovered}");
+                Console.WriteLine(coronavirus.ToString());
             } else {
-                Console.WriteLine($"Дата: {coronavirus.Date}");
-                Console.WriteLine($"--Число зараженных: {coronavirus.Cases}");
-                Console.WriteLine($"--Число умерших: {coronavirus.Death}");
-                Console.WriteLine($"--Число выживших: {coronavirus.Recovered}");
-
-                Console.WriteLine("\n----------------------------------------------------------\n");
-                
-                Console.WriteLine($"Дата: {oldCoronavirusState.Date}");
-                Console.WriteLine($"--Число зараженных: {oldCoronavirusState.Cases}");
-                Console.WriteLine($"--Число умерших: {oldCoronavirusState.Death}");
-                Console.WriteLine($"--Число выживших: {oldCoronavirusState.Recovered}");
+                Console.WriteLine(coronavirus.ToString());
 
                 Console.WriteLine("\n----------------------------------------------------------\n");
 
-                Console.WriteLine($"За период {oldCoronavirusState.Date} - {coronavirus.Date}");
+                Console.WriteLine(oldCoronavirusState.ToString());
+
+                Console.WriteLine("\n----------------------------------------------------------\n");
+
+                Console.WriteLine($"За период {oldCoronavirusState.Date} - {coronavirus.Date} прошло {coronavirus.Date - oldCoronavirusState.Date}");
                 Console.WriteLine($"--Число зараженных изменилось на: {coronavirus.Cases - oldCoronavirusState.Cases}");
                 Console.WriteLine($"--Число умерших изменилось на: {coronavirus.Death - oldCoronavirusState.Death}");
                 Console.WriteLine($"--Число выживших изменилось на: {coronavirus.Recovered - oldCoronavirusState.Recovered}");
             }
-            Save(coronavirus);
 
+            Save(coronavirus);
             Console.Read();
         }
     }

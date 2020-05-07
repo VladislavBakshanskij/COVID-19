@@ -16,5 +16,7 @@ namespace CoronaVirus {
             this.Recovered = recovered;
             Date = DateTime.Now;
         }
+
+        public override string ToString() => $"Дата: {this.Date}\n--Число зараженных: {this.Cases}\n--Число умерших: {this.Death}\n--Число выживших: {this.Recovered}";
     }
 }
