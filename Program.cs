@@ -38,7 +38,8 @@ namespace Covid_19 {
             return new Coronavirus(){
                 Cases = int.Parse(result[0].Replace(",", "")), 
                 Death = int.Parse(result[1].Replace(",", "")), 
-                Recovered = int.Parse(result[2].Replace(",", ""))
+                Recovered = int.Parse(result[2].Replace(",", "")),
+                Date = DateTime.Now
             };
         }
 

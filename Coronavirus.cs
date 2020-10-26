@@ -10,13 +10,13 @@ namespace Covid_19 {
         public Coronavirus() { 
         }
 
-        public Coronavirus(int cases, int death, int recovered) {
-            this.Cases = cases;
-            this.Death = death;
-            this.Recovered = recovered;
-            Date = DateTime.Now;
+        public Coronavirus(int cases, int death, int recovered, DateTime date) {
+            Cases = cases;
+            Death = death;
+            Recovered = recovered;
+            Date = date;
         }
 
-        public override string ToString() => $"Дата: {this.Date}\n--Число зараженных: {this.Cases}\n--Число умерших: {this.Death}\n--Число выживших: {this.Recovered}";
+        public override string ToString() => $"Дата: {Date}\n--Число зараженных: {Cases}\n--Число умерших: {Death}\n--Число выживших: {Recovered}";
     }
 }

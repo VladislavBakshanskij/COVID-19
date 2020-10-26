@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Владислав Бакшанский\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Владислав Бакшанский\\.nuget\\packages"
+      "C:\\Users\\vbaks\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\vbaks\\.nuget\\packages"
     ]
   }
 }
