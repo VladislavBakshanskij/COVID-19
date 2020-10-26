@@ -490,5 +490,5 @@ MigrationBackup/
 
 # End of https://www.gitignore.io/api/csharp,visualstudio
 
-**/result.json/**
+result.json
 **/[Bb]in/**
